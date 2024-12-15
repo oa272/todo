@@ -1,0 +1,124 @@
+body{
+   font-family: "PT Sans", sans-serif;
+   min-height: 100vh;
+   background-image: url(../images/wallpaperflare.com_wallpaper.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.add-task{
+   background-color:rgb(163, 118, 208);
+   padding: 10px 35px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   color: #fff;
+   transition: 0.5s;
+}
+.add-task:hover{
+   background-color:rgb(128, 73, 182) ;
+}
+.first:focus{
+   box-shadow: 0 0 0 5px rgb(203, 153, 253);
+}
+.task-container .icon{
+   cursor: pointer;
+   background-color:rgb(163, 118, 208) ;
+   padding: 5px 10px;
+   color: #fff;
+   border-radius: 5px;
+   transition: 0.5s;
+}
+.task-container .icon:hover{
+   background-color:rgb(128, 73, 182);
+}
+.task-container .task-name{
+   cursor: pointer;
+   position: relative;
+}
+.task-container .task-name::after{
+   content: "Click To Completed";
+   position: absolute;
+   top: 100%;
+   left: 0;
+   background-color: #000;
+   color: #fff;
+   padding: 5px;
+   font-size: 8px;
+   text-wrap: nowrap;
+   pointer-events: none;
+   opacity: 0;
+   transition: opacity 0.5s;
+   border-radius: 5px;
+}
+.task-container .task-name:hover::after{
+   opacity: 1;
+}
+.loading{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 9999;
+   background-color: rgba(0, 0, 0 ,.3);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.loader {
+   width: 48px;
+   height: 48px;
+   border: 5px solid #FFF;
+   border-radius: 50%;
+   display: inline-block;
+   box-sizing: border-box;
+   position: relative;
+   animation: pulse 1s linear infinite;
+ }
+ .loader:after {
+   content: '';
+   position: absolute;
+   width: 48px;
+   height: 48px;
+   border: 5px solid #FFF;
+   border-radius: 50%;
+   display: inline-block;
+   box-sizing: border-box;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   animation: scaleUp 1s linear infinite;
+ }
+ @keyframes scaleUp {
+   0% { transform: translate(-50%, -50%) scale(0) }
+   60% , 100% { transform: translate(-50%, -50%)  scale(1)}
+ }
+ @keyframes pulse {
+   0% , 60% , 100%{ transform:  scale(1) }
+   80% { transform:  scale(1.2)}
+ }
+ .status-todo{
+   color: #fff;
+ }
+ #progressbar{
+   height: 10px;
+   background-color:rgb(211, 209, 213);
+   border-radius: 5px;
+   margin-top: 10px;
+   overflow: hidden;
+ }
+ #progress{
+   height: inherit;
+   background-color:rgb(197, 139, 255) ;
+   width: 0;
+   transition: width 0.7s;
+ }
+ .status-number{
+   width: 50px;
+   height: 50px;
+   border: 1px solid #ccc;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   font-size: 10px;
+ }
